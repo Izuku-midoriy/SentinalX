@@ -1,0 +1,118 @@
+# ==========================================
+# SentinelX Root .gitignore
+# ==========================================
+
+# ------------------------------------------
+# Environment & Secrets
+# ------------------------------------------
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# ------------------------------------------
+# Operating System Artifacts
+# ------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ------------------------------------------
+# IDEs, Editors & AI Assistants
+# ------------------------------------------
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+.agent/
+.agents/
+.system_generated/
+
+# Temporary diff / patch files
+*.diff
+*.patch
+
+# ------------------------------------------
+# Node.js / React Frontend
+# ------------------------------------------
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.vite/
+**/.vite/
+*.tsbuildinfo
+**/*.tsbuildinfo
+
+# Package manager logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ------------------------------------------
+# Java / Spring Boot / Maven
+# ------------------------------------------
+target/
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties
+
+# Crash / heap dumps
+hs_err_pid*
+replay_pid*
+
+# ------------------------------------------
+# Python / AI-ML Microservice
+# ------------------------------------------
+venv/
+.venv/
+env/
+ENV/
+**/venv/
+**/.venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+parts/
+var/
+sdist/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+**/.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# ------------------------------------------
+# Database, Docker & Logs
+# ------------------------------------------
+postgres_data/
+**/postgres_data/
+*.log
+logs/
+**/logs/

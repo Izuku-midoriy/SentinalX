@@ -1,0 +1,50 @@
+server:
+  port: ${SERVER_PORT:8085}
+
+spring:
+  application:
+    name: sentinelx-backend
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/sentinelx}
+    username: ${POSTGRES_USER:sentinelx}
+    password: ${POSTGRES_PASSWORD:postgres_dev_password_change_me}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    open-in-view: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update}
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: when_authorized
+      probes:
+        enabled: true
+    prometheus:
+      enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} [req_id=%X{requestId:-none}] - %msg%n"
+  level:
+    com.sentinelx: INFO
+    org.springframework.security: WARN
+
+sentinelx:
+  ai:
+    enabled: ${AI_SERVICE_ENABLED:true}
+    service-url: ${AI_SERVICE_URL:http://localhost:8000}
+    timeout-ms: ${AI_SERVICE_TIMEOUT_MS:1500}
+

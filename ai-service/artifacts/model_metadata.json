@@ -1,0 +1,159 @@
+{
+  "model_name": "sentinelx-flow-randomforest",
+  "model_version": "1.0.0",
+  "created_at": "2026-10-18T16:39:15.297195Z",
+  "framework": "scikit-learn",
+  "primary_model": "RandomForest",
+  "dataset_origin": "CIC-IDS2017 schema (leakage-shielded)",
+  "classes": [
+    "BENIGN",
+    "DDoS",
+    "DoS-Hulk",
+    "PortScan",
+    "SSH-Patator"
+  ],
+  "features": [
+    "destination_port",
+    "flow_duration",
+    "total_fwd_packets",
+    "total_bwd_packets",
+    "total_length_fwd_packets",
+    "total_length_bwd_packets",
+    "fwd_packet_length_max",
+    "fwd_packet_length_min",
+    "fwd_packet_length_mean",
+    "fwd_packet_length_std",
+    "bwd_packet_length_max",
+    "bwd_packet_length_min",
+    "bwd_packet_length_mean",
+    "bwd_packet_length_std",
+    "flow_bytes_per_s",
+    "flow_packets_per_s",
+    "flow_iat_mean",
+    "flow_iat_std",
+    "flow_iat_max",
+    "flow_iat_min",
+    "fwd_iat_total",
+    "bwd_iat_total",
+    "fwd_psh_flags",
+    "bwd_psh_flags",
+    "fwd_urg_flags",
+    "bwd_urg_flags",
+    "fin_flag_count",
+    "syn_flag_count",
+    "rst_flag_count",
+    "psh_flag_count",
+    "ack_flag_count",
+    "urg_flag_count",
+    "down_up_ratio",
+    "average_packet_size",
+    "init_win_bytes_forward",
+    "init_win_bytes_backward"
+  ],
+  "feature_count": 36,
+  "split_strategy": "stratified 70/15/15",
+  "metrics": {
+    "RandomForest": {
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "us_per_sample": 16.32518238491482,
+      "train_duration_s": 0.29906439781188965,
+      "classification_report": {
+        "BENIGN": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1170.0
+        },
+        "DDoS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 108.0
+        },
+        "DoS-Hulk": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 270.0
+        },
+        "PortScan": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 180.0
+        },
+        "SSH-Patator": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 72.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1800.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1800.0
+        }
+      }
+    },
+    "XGBoost": {
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "train_duration_s": 0.4941873550415039,
+      "classification_report": {
+        "BENIGN": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1170.0
+        },
+        "DDoS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 108.0
+        },
+        "DoS-Hulk": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 270.0
+        },
+        "PortScan": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 180.0
+        },
+        "SSH-Patator": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 72.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1800.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1800.0
+        }
+      }
+    }
+  },
+  "hardware_target": "CPU (zero-cost local inference)"
+}
